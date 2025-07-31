@@ -49,6 +49,8 @@ while [[ $(kubectl get pod rancher-systems-summary-pod -n cattle-system -o 'json
 done
 
 # Grab the logs from the pod
+[ ! -d Output ] && mkdir Output
+cd Output
 kubectl logs pod/rancher-systems-summary-pod -n cattle-system > rancher-systems-summary-$(date +%F).out
 
 # Clean up the pod
