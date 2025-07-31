@@ -59,5 +59,5 @@ NOTE: It might take a few minutes for the pod to collect the information and dis
 
 ## Example output:
 
-[Summary Output](./rancher-systems-summary.md)
+[Summary Output Examples](./Output)
 
