@@ -9,6 +9,10 @@ For virtual machines: vCPU count and role.
 Identify the kubernetes role (control-plane vs worker) for each of the systems.
 Additionally, the baseOS running on each node needs to be identified.
 
+## Notes
+Inspection of Bare Metal results is recommended.  Intel Hyper-Threading and AMT Simultaneous Multithreading (SMT) have become ubiquitous.
+ 
+
 ## Data Gathering Process
 ### Rancher 2.x Systems Summary v2
 
