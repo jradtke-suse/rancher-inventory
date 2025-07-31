@@ -4,10 +4,10 @@
 
 To align with the subscription model introduced in 2025, the goal is to get an accurate detailed overview of the compute resources dedicated to the Kubernetes environment managed by Rancher.  This information will ensure that the optimal subscription allocation is created to ensure cost-optimization for this coverage.
 
-For bare metal/physical nodes: determine how many sockets/cores.
-For virtual machines: vCPU count and role.
-Identify the kubernetes role (control-plane vs worker) for each of the systems.
-Additionally, the baseOS running on each node needs to be identified.
+For bare metal/physical nodes: determine how many sockets/cores.  
+For virtual machines: vCPU count and role.  
+Identify the kubernetes role (control-plane vs worker) for each of the systems.  
+Additionally, the baseOS running on each node needs to be identified.  
 
 ## Notes
 
