@@ -52,7 +52,7 @@ kubectl delete pod/rancher-systems-summary-pod -n cattle-system
 
 NOTE: It might take a few minutes for the pod to collect the information and display it in the logs. The script will delete the pod after displaying the information.
 
-Example output:
+## Example output:
 
 ```bash
 geeko:~ jradtke$ kubectl apply -f https://raw.githubusercontent.com/rancherlabs/support-tools/master/collection/rancher/v2.x/systems-information-v2/deploy.yaml
