@@ -36,7 +36,7 @@ The script runs as a pod in the Rancher 2.x cluster and collects information abo
 
 ### How to use
 
-Run the following command to deploy the script as a pod in the Rancher local cluster:
+Run the following commands to run the deployment as a pod in the Rancher local cluster:
 Note:  the script is located in the [Scripts Directory](./Scripts/)
 
 ```bash
