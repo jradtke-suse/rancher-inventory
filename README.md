@@ -12,7 +12,7 @@ Additionally, the baseOS running on each node needs to be identified.
 ## Notes
 
 * Inspection of Bare Metal results is recommended.  Intel Hyper-Threading and AMT Simultaneous Multithreading (SMT) have become ubiquitous, and the core density is not easily determined.  Therefore, it is recommended to review the actual CPU model and determine how many cores are possible, followed by confirmation that all cores are available (system configuration may not have the functionality enabled)
- 
+* SUSE offers LTSS for resources that cannot be migrate by the EOL date (Jun 2025).  Please identify which resources will remain on a version that requires LTSS, as well as a timeline for migration. 
 
 ## Data Gathering Process
 ### Rancher 2.x Systems Summary v2
