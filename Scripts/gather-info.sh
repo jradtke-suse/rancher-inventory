@@ -7,7 +7,26 @@
 
 # Manual Steps
 # Validate/confirm current context is pointing to Rancher Manager
+
+echo "Now showing available Kubernetes contexts:"
 kubectl config get-contexts
+
+echo ""
+echo "Please confirm context is correct."
+echo "If context is not correct, press any key within 5 seconds to exit..."
+# -n 1 : read 1 character
+# -s   : do not echo input
+# -t 5 : wait up to 5 seconds
+if read -n 1 -s -t 5; then
+    echo "Key pressed. Exiting."
+    echo ""
+    echo "run: kubectl config use-context <correct context> "
+    echo "to use the correct context."
+    echo ""
+    exit 0
+else
+    echo "No key pressed. Continuing..."
+fi
 
 # Create var for output
 OUTPUT=rancher-systems-summary-$(date +%F).out
