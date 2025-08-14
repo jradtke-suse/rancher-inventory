@@ -3,6 +3,7 @@
 # Purpose: to gather host CPU information from clusters managed by Rancher
 #  Status: Work in Progress.  Script works but needs additional testing to ensure
 #            different use-cases are accommodated.  Open an Issue/PR if you encounter problems
+#    Note: This is *not* an official repo or script.  (it does rely on an official deployment though) 
 
 # curl -o ./gather-info.sh https://raw.githubusercontent.com/jradtke-suse/rancher-inventory/refs/heads/main/Scripts/gather-info.sh 
 # sh ./gather-info.sh 
