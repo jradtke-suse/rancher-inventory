@@ -1,10 +1,13 @@
 #!/bin/bash
 
 # Purpose: to gather host CPU information from clusters managed by Rancher
+#  Status: Work in Progress.  Script works but needs additional testing to ensure
+#            different use-cases are accommodated.  Open an Issue/PR if you encounter problems
 
-# Make sure you have the correct KUBECONFIG and context in scpoe, then run the following command:
-# curl https://raw.githubusercontent.com/jradtke-suse/rancher-inventory/refs/heads/main/Scripts/gather-info.sh | bash -s -
+# curl -o ./gather-info.sh https://raw.githubusercontent.com/jradtke-suse/rancher-inventory/refs/heads/main/Scripts/gather-info.sh 
+# sh ./gather-info.sh 
 
+# Make sure you have the correct KUBECONFIG and context in scpoe, then run the following commands:
 # Manual Steps
 # Validate/confirm current context is pointing to Rancher Manager
 
