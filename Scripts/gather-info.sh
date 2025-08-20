@@ -53,4 +53,3 @@ cat $OUTPUT
 # Clean up the pod
 kubectl delete pod/rancher-systems-summary-pod -n cattle-system
 
-exit 0
