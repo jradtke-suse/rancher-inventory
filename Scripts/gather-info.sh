@@ -1,36 +1,46 @@
 #!/bin/bash
 
-# Purpose: to gather host CPU information from clusters managed by Rancher
-#  Status: Work in Progress.  Script works but needs additional testing to ensure
-#            different use-cases are accommodated.  Open an Issue/PR if you encounter problems
-#    Note: This is *not* an official repo or script.  (it does rely on an official deployment though) 
+#  Purpose: to gather host CPU information from clusters managed by Rancher
+#   Status: Work in Progress.  Script works but needs additional testing to ensure
+#             different use-cases are accommodated.  Open an Issue/PR if you encounter problems
+#     Note: This is *not* an official repo or script.  (it does rely on an official deployment though) 
 
-# curl -o ./gather-info.sh https://raw.githubusercontent.com/jradtke-suse/rancher-inventory/refs/heads/main/Scripts/gather-info.sh 
-# sh ./gather-info.sh 
+run_from_web() {
+  curl -o ./gather-info.sh https://raw.githubusercontent.com/jradtke-suse/rancher-inventory/refs/heads/main/Scripts/gather-info.sh 
+  sh ./gather-info.sh 
+}
 
-# Make sure you have the correct KUBECONFIG and context in scpoe, then run the following commands:
-# Manual Steps
-# Validate/confirm current context is pointing to Rancher Manager
+# Let's make sure the correct KUBECONFIG and context in scpoe, then gather K8s information
 
+# Validate/confirm current context is referring to Rancher Manager
+echo ""
 echo "Now showing available Kubernetes contexts:"
 kubectl config get-contexts
-
 echo ""
-echo "Please confirm context is correct."
-echo "If context is not correct, press any key within 5 seconds to exit..."
-# -n 1 : read 1 character
-# -s   : do not echo input
-# -t 5 : wait up to 5 seconds
-if read -n 1 -s -t 5; then
-    echo "Key pressed. Exiting."
-    echo ""
-    echo "run: kubectl config use-context <correct context> "
-    echo "to use the correct context."
-    echo ""
-    exit 0
-else
-    echo "No key pressed. Continuing..."
-fi
+
+echo "Please confirm context (shown above with *) is correct."
+echo "If context is not correct, press any key within 5 seconds to exit. Otherwise, script will proceed."
+echo ""
+
+# Function to read a single character with timeout
+read_with_timeout() {
+    if read -t 1 -n 1 -s key; then
+        return 0  # Key was pressed
+    else
+        return 1  # Timeout occurred
+    fi
+}
+
+# Countdown loop
+for i in {5..1}; do
+    echo -ne "\rTime remaining to cancel: $i seconds "
+    
+    if read_with_timeout; then
+        echo -e "\n\nOperation cancelled by user input."
+        exit 0
+    fi
+done
+echo -e "\n\nWill now proceed with operation..."
 
 # Create var for output
 OUTPUT=rancher-systems-summary-$(date +%F).out

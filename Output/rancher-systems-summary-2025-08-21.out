@@ -1,0 +1,77 @@
+geeko:~ jradtke$ . ~/Developer/Repositories/Work/jradtke-suse/rancher-inventory/Scripts/gather-info.sh
+
+Now showing available Kubernetes contexts:
+CURRENT   NAME            CLUSTER         AUTHINFO    NAMESPACE
+          harvester       harvester       local       cattle-monitoring-system
+          observability   observability   default     suse-observability
+*         rancher         local           local
+          rke2-harv       rke2-harv       rke2-harv   suse-observability
+
+Please confirm context (shown above with *) is correct.
+If context is not correct, press any key within 5 seconds to exit. Otherwise, script will proceed.
+
+Time remaining to cancel: 1 seconds
+
+Will now proceed with operation...
+pod/rancher-systems-summary-pod created
+Waiting for rancher-systems-summary-pod to complete...
+Waiting for rancher-systems-summary-pod to complete...
+Rancher Systems Summary Report
+==============================
+Run on Thu Aug 21 19:48:16 UTC 2025
+
+NAME                       READY   STATUS    RESTARTS      AGE
+rancher-79b4455664-dd4qn   1/1     Running   4 (23h ago)   25d
+Rancher version: v2.11.3
+Rancher id: 57299729-c16b-4857-8a48-3a45f36b2b94
+
+Cluster Id     Name                K8s Version           Provider    Created                Nodes
+c-4kt65        3nuc-harvester      v1.32.4+rke2r1        harvester   2025-07-26T21:28:19Z   <none>
+c-cg9wl        eks-test-20250821   v1.32.7-eks-ace6451               2025-08-21T19:32:19Z   <none>
+c-hcrk7        observability       v1.32.7+k3s1          k3s         2025-08-20T20:16:37Z   <none>
+c-m-sh4jmcxr   rke2-harv           v1.32.6+rke2r1        rke2        2025-08-05T20:04:21Z   <none>
+local          local               v1.32.7+k3s1          k3s         2025-07-26T21:23:04Z   <none>
+
+--------------------------------------------------------------------------------
+Cluster: 3nuc-harvester (c-4kt65)
+Node Id         Address               etcd   Control Plane   Worker   CPU   RAM          OS                     Container Runtime Version   Created
+machine-br42p   10.10.12.103,nuc-03   true   true            false    12    65544024Ki   Harvester v1.5.1-rc2   containerd://2.0.4-k3s2     2025-07-26T21:30:26Z
+machine-f4zxg   10.10.12.101,nuc-01   true   true            false    12    65560404Ki   Harvester v1.5.1-rc2   containerd://2.0.4-k3s2     2025-07-26T21:30:26Z
+machine-hqtmv   10.10.12.102,nuc-02   true   true            false    12    65544016Ki   Harvester v1.5.1-rc2   containerd://2.0.4-k3s2     2025-07-26T21:30:26Z
+Node count: 3
+
+--------------------------------------------------------------------------------
+Cluster: eks-test-20250821 (c-cg9wl)
+Node Id         Address                                                                                                                                                                         etcd    Control Plane   Worker   CPU   RAM         OS                             Container Runtime Version   Created
+machine-6znp9   192.168.243.226,18.237.186.215,ip-192-168-243-226.us-west-2.compute.internal,ip-192-168-243-226.us-west-2.compute.internal,ec2-18-237-186-215.us-west-2.compute.amazonaws.com   false   false           true     2     3919448Ki   Amazon Linux 2023.8.20250808   containerd://1.7.27         2025-08-21T19:45:28Z
+machine-dl56g   192.168.132.186,35.89.21.152,ip-192-168-132-186.us-west-2.compute.internal,ip-192-168-132-186.us-west-2.compute.internal,ec2-35-89-21-152.us-west-2.compute.amazonaws.com       false   false           true     2     3919448Ki   Amazon Linux 2023.8.20250808   containerd://1.7.27         2025-08-21T19:45:28Z
+Node count: 2
+
+--------------------------------------------------------------------------------
+Cluster: observability (c-hcrk7)
+Node Id         Address                         etcd   Control Plane   Worker   CPU   RAM          OS                     Container Runtime Version    Created
+machine-4j4rp   10.10.12.182,observability-02   true   true            false    4     16381896Ki   SUSE Linux Micro 6.1   containerd://2.0.5-k3s2.32   2025-08-20T20:17:40Z
+machine-8bs8x   10.10.12.181,observability-01   true   true            false    4     16381896Ki   SUSE Linux Micro 6.1   containerd://2.0.5-k3s2.32   2025-08-20T20:17:40Z
+machine-z5khp   10.10.12.183,observability-03   true   true            false    4     16381896Ki   SUSE Linux Micro 6.1   containerd://2.0.5-k3s2.32   2025-08-20T20:17:40Z
+Node count: 3
+
+--------------------------------------------------------------------------------
+Cluster: rke2-harv (c-m-sh4jmcxr)
+Node Id         Address                                           etcd    Control Plane   Worker   CPU   RAM         OS                     Container Runtime Version   Created
+machine-f29dx   10.10.15.78,rke2-harv-workers-sm-sqrrc-8pjbw      false   false           true     2     4015180Ki   SUSE Linux Micro 6.1   containerd://2.0.5-k3s1     2025-08-05T20:14:40Z
+machine-f4hwq   10.10.15.80,rke2-harv-control-plane-92bsj-pf5tn   true    true            false    2     4015184Ki   SUSE Linux Micro 6.1   containerd://2.0.5-k3s1     2025-08-05T20:13:11Z
+machine-g6z62   10.10.15.77,rke2-harv-control-plane-92bsj-z6qcp   true    true            false    2     4015184Ki   SUSE Linux Micro 6.1   containerd://2.0.5-k3s1     2025-08-05T20:12:37Z
+machine-l9sl6   10.10.15.76,rke2-harv-control-plane-92bsj-kdm4h   true    true            false    2     4015176Ki   SUSE Linux Micro 6.1   containerd://2.0.5-k3s1     2025-08-05T20:10:11Z
+machine-z7x8v   10.10.15.79,rke2-harv-workers-sm-sqrrc-x5hsz      false   false           true     2     4015180Ki   SUSE Linux Micro 6.1   containerd://2.0.5-k3s1     2025-08-05T20:14:38Z
+Node count: 5
+
+--------------------------------------------------------------------------------
+Cluster: local (local)
+Node Id         Address                   etcd   Control Plane   Worker   CPU   RAM         OS                                    Container Runtime Version    Created
+machine-bhffb   10.10.12.123,rancher-03   true   true            false    2     7730528Ki   SUSE Linux Enterprise Server 15 SP6   containerd://2.0.5-k3s2.32   2025-07-31T13:32:48Z
+machine-mwx5g   10.10.12.122,rancher-02   true   true            false    2     7730532Ki   SUSE Linux Enterprise Server 15 SP6   containerd://2.0.5-k3s1.32   2025-07-26T21:23:21Z
+machine-rnwmp   10.10.12.121,rancher-01   true   true            false    2     7730536Ki   SUSE Linux Enterprise Server 15 SP6   containerd://2.0.5-k3s1.32   2025-07-26T21:23:21Z
+Node count: 3
+--------------------------------------------------------------------------------
+Total node count: 16
+pod "rancher-systems-summary-pod" deleted
