@@ -42,6 +42,11 @@ for i in {5..1}; do
 done
 echo -e "\n\nWill now proceed with operation..."
 
+# Validate what permissions/access this kubectl config has
+echo "Now showing permissions and access"
+kubectl auth can-i --list
+echo 
+
 # Create var for output
 OUTPUT=rancher-systems-summary-$(date +%F).out
 
