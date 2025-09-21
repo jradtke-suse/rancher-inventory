@@ -101,8 +101,9 @@ kubectl logs pod/rancher-systems-summary-pod -n cattle-system > $OUTPUT
 
 # Review the logs (and forward back to SUSE)
 cat $OUTPUT
+echo ""
 echo "# Note:  You can find the output in file"
-echo "$OUTPUT"
+echo "cat $OUTPUT"
 echo ""
 
 # Clean up the pod
