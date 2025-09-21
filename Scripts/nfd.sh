@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Node Feature Discovery
 # My exploration of: https://github.com/kubernetes-sigs/node-feature-discovery
 
