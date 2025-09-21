@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 #  Purpose: to gather host CPU information from clusters managed by Rancher
 #   Status: Work in Progress.  Script works but needs additional testing to ensure
