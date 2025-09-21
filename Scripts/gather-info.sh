@@ -6,10 +6,46 @@ set -euo pipefail
 #             different use-cases are accommodated.  Open an Issue/PR if you encounter problems
 #     Note: This is *not* an official repo or script.  (it does rely on an official deployment though) 
 
+# Function to check if required tools are installed
+check_dependencies() {
+    local missing_tools=()
+    
+    # Check for kubectl
+    if ! command -v kubectl &> /dev/null; then
+        missing_tools+=("kubectl")
+    fi
+    
+    # Check for curl
+    if ! command -v curl &> /dev/null; then
+        missing_tools+=("curl")
+    fi
+    
+    # Check for date command (should be available on all systems, but good to verify)
+    if ! command -v date &> /dev/null; then
+        missing_tools+=("date")
+    fi
+    
+    # If any tools are missing, report and exit
+    if [ ${#missing_tools[@]} -ne 0 ]; then
+        echo "Error: The following required tools are not installed or not in PATH:"
+        for tool in "${missing_tools[@]}"; do
+            echo "  - $tool"
+        done
+        echo ""
+        echo "Please install the missing tools and try again."
+        exit 1
+    fi
+    
+    echo "✓ All required tools are available"
+}
+
 run_from_web() {
   curl -o ./gather-info.sh https://raw.githubusercontent.com/jradtke-suse/rancher-inventory/refs/heads/main/Scripts/gather-info.sh 
   sh ./gather-info.sh 
 }
+
+# Check dependencies first
+check_dependencies
 
 # Let's make sure the correct KUBECONFIG and context in scpoe, then gather K8s information
 
@@ -65,6 +101,9 @@ kubectl logs pod/rancher-systems-summary-pod -n cattle-system > $OUTPUT
 
 # Review the logs (and forward back to SUSE)
 cat $OUTPUT
+echo "# Note:  You can find the output in file"
+echo "$OUTPUT"
+echo ""
 
 # Clean up the pod
 kubectl delete pod/rancher-systems-summary-pod -n cattle-system
