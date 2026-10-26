@@ -40,6 +40,8 @@ check_dependencies() {
 }
 
 run_from_web() {
+  mkdir -p ~/Developer/Projects/Rancher-Inventory; cd $_
+  export KUBECONFIG=~/.kube/config
   curl -o ./gather-info.sh https://raw.githubusercontent.com/jradtke-suse/rancher-inventory/refs/heads/main/Scripts/gather-info.sh 
   sh ./gather-info.sh 
 }
