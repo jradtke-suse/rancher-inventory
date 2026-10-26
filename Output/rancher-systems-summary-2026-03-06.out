@@ -1,0 +1,57 @@
+Rancher Systems Summary Report
+==============================
+Run on Fri Mar  6 12:33:49 UTC 2026
+
+NAME                       READY   STATUS    RESTARTS      AGE
+rancher-6dc8495d9d-kgjnz   1/1     Running   1 (36h ago)   42h
+rancher-6dc8495d9d-q7fmx   1/1     Running   3 (36h ago)   42h
+rancher-6dc8495d9d-rj4f4   1/1     Running   1 (42h ago)   42h
+Rancher version: v2.13.3
+Rancher id: 3d8b27a8-5c23-4b34-b8c8-872c0d69360d
+
+Cluster Id     Name            K8s Version      Provider    Created                Nodes
+c-m-77sqc8qv   observability   v1.34.4+rke2r1   rke2        2026-03-05T17:52:56Z   <none>
+c-nh6pc        harv-edge       v1.34.3+rke2r3   harvester   2026-03-04T19:18:37Z   <none>
+local          local           v1.34.4+rke2r1   rke2        2026-03-04T18:29:31Z   <none>
+
+--------------------------------------------------------------------------------
+Cluster: observability (c-m-77sqc8qv)
+Node Id         Address                                      etcd   CP     W      CPU   RAM          OS                     Created
+machine-96krz   10.10.15.38,observability-o11y-7zrhk-2nfhs   true   true   true   8     16379012Ki   SUSE Linux Micro 6.1   2026-03-05T17:59:38Z
+machine-9c8mp   10.10.15.37,observability-o11y-7zrhk-hbfhn   true   true   true   8     16379016Ki   SUSE Linux Micro 6.1   2026-03-05T17:58:09Z
+machine-pkltn   10.10.15.39,observability-o11y-7zrhk-xx2c5   true   true   true   8     16379016Ki   SUSE Linux Micro 6.1   2026-03-05T17:59:36Z
+
+Node count:         3
+Control Plane CPUs: 24
+Worker Node CPUs:   24
+Cluster Total CPUs: 24
+
+--------------------------------------------------------------------------------
+Cluster: harv-edge (c-nh6pc)
+Node Id         Address               etcd   CP     W       CPU   RAM          OS                 Created
+machine-bkjss   10.10.12.102,nuc-02   true   true   false   16    65386964Ki   Harvester v1.7.1   2026-03-04T19:19:16Z
+machine-v64rp   10.10.12.103,nuc-03   true   true   false   16    65386936Ki   Harvester v1.7.1   2026-03-04T19:19:16Z
+machine-w52jv   10.10.12.101,nuc-01   true   true   false   16    65386948Ki   Harvester v1.7.1   2026-03-04T19:19:16Z
+
+Node count:         3
+Control Plane CPUs: 48
+Worker Node CPUs:   0
+Cluster Total CPUs: 48
+
+--------------------------------------------------------------------------------
+Cluster: local (local)
+Node Id         Address                   etcd   CP     W       CPU   RAM          OS                     Created
+machine-bsn45   10.10.12.212,rancher-02   true   true   false   4     12253700Ki   SUSE Linux Micro 6.1   2026-03-04T18:30:13Z
+machine-lgvcq   10.10.12.211,rancher-01   true   true   false   4     12253704Ki   SUSE Linux Micro 6.1   2026-03-04T18:30:13Z
+machine-r4jvv   10.10.12.213,rancher-03   true   true   false   4     12253692Ki   SUSE Linux Micro 6.1   2026-03-04T18:30:13Z
+
+Node count:         3
+Control Plane CPUs: 12
+Worker Node CPUs:   0
+Cluster Total CPUs: 12
+--------------------------------------------------------------------------------
+GLOBAL SUMMARY
+Total Nodes:              9
+Total Control Plane CPUs: 84
+Total Worker CPUs:        24
+Total Aggregate CPUs:     84

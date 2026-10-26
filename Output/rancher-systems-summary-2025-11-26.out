@@ -1,0 +1,42 @@
+Rancher Systems Summary Report
+==============================
+Run on Wed Nov 26 23:25:37 UTC 2025
+
+NAME                       READY   STATUS    RESTARTS   AGE
+rancher-84bc8d56bc-plpks   1/1     Running   0          30h
+Rancher version: v2.13.0
+Rancher id: 7da9093c-d066-4e2c-a44d-021d5d31e402
+
+Cluster Id     Name              K8s Version      Provider    Created                Nodes
+c-m-wqbx8xxn   rke2-harv-dc-01   v1.34.1+rke2r1   rke2        2025-11-26T22:38:42Z   <none>
+c-qbkg5        harvester-dc      v1.33.5+rke2r1   harvester   2025-11-25T17:02:38Z   <none>
+local          local             v1.32.10+k3s1    k3s         2025-11-25T16:56:11Z   <none>
+
+--------------------------------------------------------------------------------
+Cluster: rke2-harv-dc-01 (c-m-wqbx8xxn)
+Node Id         Address                                                 etcd    Control Plane   Worker   CPU   RAM         OS                     Container Runtime Version   Created
+machine-8xlhk   10.10.15.78,rke2-harv-dc-01-worker-nodes-ctt85-hbt82    false   false           true     4     8137216Ki   SUSE Linux Micro 6.1   containerd://2.1.4-k3s2     2025-11-26T22:54:09Z
+machine-946d4   10.10.15.80,rke2-harv-dc-01-control-plane-fzzf7-q7jmw   true    true            true     2     4015180Ki   SUSE Linux Micro 6.1   containerd://2.1.4-k3s2     2025-11-26T22:44:04Z
+machine-h5mxn   10.10.15.77,rke2-harv-dc-01-worker-nodes-ctt85-dvdnh    false   false           true     4     8137220Ki   SUSE Linux Micro 6.1   containerd://2.1.4-k3s2     2025-11-26T22:54:14Z
+machine-jp6kj   10.10.15.81,rke2-harv-dc-01-control-plane-fzzf7-9rrk4   true    true            true     2     4015176Ki   SUSE Linux Micro 6.1   containerd://2.1.4-k3s2     2025-11-26T22:47:33Z
+machine-nw99r   10.10.15.82,rke2-harv-dc-01-control-plane-fzzf7-6q5ch   true    true            true     2     4015180Ki   SUSE Linux Micro 6.1   containerd://2.1.4-k3s2     2025-11-26T22:48:37Z
+machine-t9w5s   10.10.15.79,rke2-harv-dc-01-worker-nodes-ctt85-5gdm6    false   false           true     4     8137216Ki   SUSE Linux Micro 6.1   containerd://2.1.4-k3s2     2025-11-26T22:54:05Z
+Node count: 6
+
+--------------------------------------------------------------------------------
+Cluster: harvester-dc (c-qbkg5)
+Node Id         Address                   etcd   Control Plane   Worker   CPU   RAM           OS                 Container Runtime Version   Created
+machine-7r7cv   10.10.12.113,asus-pc-03   true   true            false    20    131737508Ki   Harvester v1.6.1   containerd://2.1.4-k3s2     2025-11-25T17:03:17Z
+machine-wjnqj   10.10.12.111,asus-pc-01   true   true            false    20    131709252Ki   Harvester v1.6.1   containerd://2.1.4-k3s2     2025-11-25T17:03:17Z
+machine-zjcln   10.10.12.112,asus-pc-02   true   true            false    20    131725628Ki   Harvester v1.6.1   containerd://2.1.4-k3s2     2025-11-25T17:03:17Z
+Node count: 3
+
+--------------------------------------------------------------------------------
+Cluster: local (local)
+Node Id         Address                   etcd   Control Plane   Worker   CPU   RAM         OS                                    Container Runtime Version    Created
+machine-pb4n7   10.10.12.212,rancher-02   true   true            false    2     8137536Ki   SUSE Linux Enterprise Server 15 SP7   containerd://2.1.5-k3s1.32   2025-11-25T16:58:35Z
+machine-rt5jn   10.10.12.213,rancher-03   true   true            false    2     8137536Ki   SUSE Linux Enterprise Server 15 SP7   containerd://2.1.5-k3s1.32   2025-11-25T16:58:35Z
+machine-zzdgq   10.10.12.211,rancher-01   true   true            false    2     8137536Ki   SUSE Linux Enterprise Server 15 SP7   containerd://2.1.5-k3s1.32   2025-11-25T16:58:34Z
+Node count: 3
+--------------------------------------------------------------------------------
+Total node count: 12

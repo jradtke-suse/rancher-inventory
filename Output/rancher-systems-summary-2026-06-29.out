@@ -1,0 +1,72 @@
+Rancher Systems Summary Report
+==============================
+Run on Mon Jun 29 15:13:38 UTC 2026
+
+NAME                       READY   STATUS    RESTARTS   AGE
+rancher-6dc8495d9d-24ps9   1/1     Running   0          22h
+rancher-6dc8495d9d-4x77l   1/1     Running   0          22h
+rancher-6dc8495d9d-vzcdl   1/1     Running   0          22h
+Rancher version: v2.13.3
+Rancher id: 0953a461-4b6d-4dd8-91f0-70fb307717d2
+
+Cluster Id     Name            K8s Version      Provider    Created                Nodes
+c-m-48rfn56j   observability   v1.34.8+rke2r2   rke2        2026-06-28T17:05:05Z   <none>
+c-m-bkmt6jm7   apps            v1.34.8+rke2r2   rke2        2026-06-29T12:12:54Z   <none>
+c-zzn8b        comm-harv       v1.34.3+rke2r3   harvester   2026-06-28T16:46:35Z   <none>
+local          local           v1.34.7+rke2r1   rke2        2026-06-28T16:44:01Z   <none>
+
+--------------------------------------------------------------------------------
+Cluster: observability (c-m-48rfn56j)
+Node Id         Address                                          etcd   CP     W      CPU   RAM          OS                                  Created
+machine-cl4hl   10.10.12.180,observability-o11y-cp-wmmfp-2g9vl   true   true   true   8     16375064Ki   SUSE Linux Enterprise Server 16.0   2026-06-28T17:10:32Z
+machine-n6ghr   10.10.12.181,observability-o11y-cp-wmmfp-czd67   true   true   true   8     16375068Ki   SUSE Linux Enterprise Server 16.0   2026-06-28T17:10:16Z
+machine-njsjb   10.10.12.179,observability-o11y-cp-wmmfp-7ttt4   true   true   true   8     16375072Ki   SUSE Linux Enterprise Server 16.0   2026-06-28T17:08:57Z
+
+Node count:         3
+Control Plane CPUs: 24
+Worker Node CPUs:   24
+Cluster Total CPUs: 24
+
+--------------------------------------------------------------------------------
+Cluster: apps (c-m-bkmt6jm7)
+Node Id         Address                                       etcd    CP      W      CPU   RAM         OS                                  Created
+machine-4s5pc   10.10.12.182,apps-workers-kdw96-5l2x2         false   false   true   4     8133652Ki   SUSE Linux Enterprise Server 16.0   2026-06-29T12:52:47Z
+machine-5hvlr   10.10.12.184,apps-control-plane-58zsm-wcxdm   true    true    true   2     4011776Ki   SUSE Linux Enterprise Server 16.0   2026-06-29T12:51:31Z
+machine-shc2g   10.10.12.185,apps-control-plane-58zsm-q58dq   true    true    true   2     4011784Ki   SUSE Linux Enterprise Server 16.0   2026-06-29T12:51:23Z
+machine-xbnz6   10.10.12.186,apps-workers-kdw96-bjtdp         false   false   true   4     8133648Ki   SUSE Linux Enterprise Server 16.0   2026-06-29T12:52:48Z
+machine-xc2wf   10.10.12.183,apps-control-plane-58zsm-98mkt   true    true    true   2     4011784Ki   SUSE Linux Enterprise Server 16.0   2026-06-29T12:49:55Z
+
+Node count:         5
+Control Plane CPUs: 6
+Worker Node CPUs:   14
+Cluster Total CPUs: 14
+
+--------------------------------------------------------------------------------
+Cluster: comm-harv (c-zzn8b)
+Node Id         Address               etcd   CP     W       CPU   RAM           OS                 Created
+machine-6cf7p   10.10.14.101,nuc-01   true   true   false   20    131716656Ki   Harvester v1.7.1   2026-06-28T16:47:36Z
+machine-6nc59   10.10.14.103,nuc-03   true   true   false   20    131801820Ki   Harvester v1.7.1   2026-06-28T16:47:36Z
+machine-gw7m7   10.10.14.102,nuc-02   true   true   false   20    131733040Ki   Harvester v1.7.1   2026-06-28T16:47:36Z
+
+Node count:         3
+Control Plane CPUs: 60
+Worker Node CPUs:   0
+Cluster Total CPUs: 60
+
+--------------------------------------------------------------------------------
+Cluster: local (local)
+Node Id         Address                   etcd   CP     W       CPU   RAM          OS                                  Created
+machine-bsr6j   10.10.12.178,rancher-02   true   true   false   8     16375064Ki   SUSE Linux Enterprise Server 16.0   2026-06-28T16:44:08Z
+machine-rhrvk   10.10.12.176,rancher-03   true   true   false   8     16375064Ki   SUSE Linux Enterprise Server 16.0   2026-06-28T16:44:08Z
+machine-w4qcw   10.10.12.177,rancher-01   true   true   false   8     16375064Ki   SUSE Linux Enterprise Server 16.0   2026-06-28T16:44:08Z
+
+Node count:         3
+Control Plane CPUs: 24
+Worker Node CPUs:   0
+Cluster Total CPUs: 24
+--------------------------------------------------------------------------------
+GLOBAL SUMMARY
+Total Nodes:              14
+Total Control Plane CPUs: 114
+Total Worker CPUs:        38
+Total Aggregate CPUs:     122

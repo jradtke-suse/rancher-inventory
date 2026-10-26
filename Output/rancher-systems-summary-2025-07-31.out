@@ -1,0 +1,39 @@
+Rancher Systems Summary Report
+==============================
+Run on Thu Jul 31 17:40:58 UTC 2025
+
+NAME                       READY   STATUS    RESTARTS        AGE
+rancher-79b4455664-dd4qn   1/1     Running   2 (2d23h ago)   4d20h
+Rancher version: v2.11.3
+Rancher id: 57299729-c16b-4857-8a48-3a45f36b2b94
+
+Cluster Id     Name             K8s Version      Provider    Created                Nodes
+c-4kt65        3nuc-harvester   v1.32.4+rke2r1   harvester   2025-07-26T21:28:19Z   <none>
+c-m-szt2shxt   rke2-harv        v1.32.5+rke2r1   rke2        2025-07-26T21:32:11Z   <none>
+local          local            v1.32.6+k3s1     k3s         2025-07-26T21:23:04Z   <none>
+
+--------------------------------------------------------------------------------
+Cluster: 3nuc-harvester (c-4kt65)
+Node Id         Address               etcd   Control Plane   Worker   CPU   RAM          OS                     Container Runtime Version   Created
+machine-br42p   10.10.12.103,nuc-03   true   true            false    12    65544024Ki   Harvester v1.5.1-rc2   containerd://2.0.4-k3s2     2025-07-26T21:30:26Z
+machine-f4zxg   10.10.12.101,nuc-01   true   true            false    12    65560404Ki   Harvester v1.5.1-rc2   containerd://2.0.4-k3s2     2025-07-26T21:30:26Z
+machine-hqtmv   10.10.12.102,nuc-02   true   true            false    12    65544016Ki   Harvester v1.5.1-rc2   containerd://2.0.4-k3s2     2025-07-26T21:30:26Z
+Node count: 3
+
+--------------------------------------------------------------------------------
+Cluster: rke2-harv (c-m-szt2shxt)
+Node Id         Address                                   etcd   Control Plane   Worker   CPU   RAM         OS                                    Container Runtime Version   Created
+machine-5r92g   10.10.15.55,rke2-harv-pool1-r2dbg-wnpvw   true   true            true     4     8136984Ki   SUSE Linux Enterprise Server 15 SP7   containerd://2.0.5-k3s1     2025-07-26T21:46:15Z
+machine-hl4fq   10.10.15.53,rke2-harv-pool1-r2dbg-zbbw2   true   true            true     4     8136988Ki   SUSE Linux Enterprise Server 15 SP7   containerd://2.0.5-k3s1     2025-07-26T21:43:42Z
+machine-r4vvz   10.10.15.54,rke2-harv-pool1-r2dbg-nzw2r   true   true            true     4     8136984Ki   SUSE Linux Enterprise Server 15 SP7   containerd://2.0.5-k3s1     2025-07-26T21:46:56Z
+Node count: 3
+
+--------------------------------------------------------------------------------
+Cluster: local (local)
+Node Id         Address                   etcd   Control Plane   Worker   CPU   RAM         OS                                    Container Runtime Version    Created
+machine-bhffb   10.10.12.123,rancher-03   true   true            false    2     7730528Ki   SUSE Linux Enterprise Server 15 SP6   containerd://2.0.5-k3s2.32   2025-07-31T13:32:48Z
+machine-mwx5g   10.10.12.122,rancher-02   true   true            false    2     7730528Ki   SUSE Linux Enterprise Server 15 SP6   containerd://2.0.5-k3s1.32   2025-07-26T21:23:21Z
+machine-rnwmp   10.10.12.121,rancher-01   true   true            false    2     7730532Ki   SUSE Linux Enterprise Server 15 SP6   containerd://2.0.5-k3s1.32   2025-07-26T21:23:21Z
+Node count: 3
+--------------------------------------------------------------------------------
+Total node count: 9
